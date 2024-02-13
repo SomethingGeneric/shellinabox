@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  shellboy:
+    build:
+      context: ./
+    restart: unless-stopped
+    container_name: shellman
+    ports:
+      - "4200:4200"
+    volumes:
+      - shellboy:/home:rw
+
+volumes:
+  shellboy:
